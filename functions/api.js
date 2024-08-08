@@ -31,7 +31,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // Set the custom FFmpeg path
-const customFfmpegPath = path.join(__dirname,'bin/ffmpeg.exe');
+const customFfmpegPath = path.join(__dirname,'bin/ffmpeg');
 
 // Convert audio to MP3
 router.post('/convert', async (req, res) => {
