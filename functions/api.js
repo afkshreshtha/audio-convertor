@@ -31,7 +31,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // Set the custom FFmpeg path
-const customFfmpegPath = path.join(__dirname, 'bin/ffmpeg');
+const customFfmpegPath = path.join(__dirname,'bin/ffmpeg.exe');
 
 // Convert audio to MP3
 router.post('/convert', async (req, res) => {
@@ -116,8 +116,9 @@ router.post('/convert', async (req, res) => {
     res.status(500).json({ error: 'Conversion Failed' });
   }
 });
-
-// Use the router
+// app.use('/', router);
+// // Use the router
+// app.listen(3001, () => console.log(`http://localhost:3001`));
 app.use('/.netlify/functions/api', router);
 
 module.exports.handler = serverless(app);
