@@ -1,4 +1,4 @@
 [build]
-  command = "chmod +x /var/task/bin/ffmpeg && npm run build"
+  command = "chmod +x bin/ffmpeg && npm run build"
   functions = "functions"
   publish = "."
